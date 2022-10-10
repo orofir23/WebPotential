@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block active_add_member %} class="active" {% endblock %}
+
+{% block body %}
+
+<form action="/show_members" method="post">
+  <div>
+    <label>שם פרטי :</label>
+    <input type="text" name="first_name" required>
+  </div>
+  <div>
+    <label>שם משפחה :</label>
+    <input type="text" name="last_name" required>
+  </div>
+  <div>
+    <label>מ"א :</label>
+    <input type="number" min="1" max="9999999" name="m_a" required>
+  </div>
+  <div>
+    <label>מין:</label>
+    <select name="kind">
+      <option value="גבר">גבר</option>
+      <option value="אישה">אישה</option>
+    </select>
+  </div>
+  <div>
+    <label>תואר:</label>
+    <select name="job">
+      <option value="לא מוסמך">לא מוסמך</option>
+      <option value="טכנאי">טכנאי</option>
+      <option value="טכנאי בכיר">טכנאי בכיר</option>
+      <option value="אחמש">אחמש</option>
+    </select>
+  </div>
+  <div>
+    <label>יציאות:</label>
+    <select name="departures">
+      <option value="יומיות">יומיות</option>
+      <option value="חמשושים">חמשושים</option>
+    </select>
+  </div>
+  <input type="submit" value="שלח">
+</form>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block active_show_members %} class="active" {% endblock %}
+
+{% block body %}
+
+    {% for member in members %}
+        <h align="center"> {{ member.str() }} </h>
+    {% endfor %}
+
+{% endblock %}
