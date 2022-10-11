@@ -21,33 +21,43 @@ class Member:
         self.__job = job
         self.__departures = departures
 
+    def get_first_name(self):
+        return self.__first_name
+
+    def get_last_name(self):
+        return self.__last_name
+
+    def get_kind(self):
+        return self.__kind
+
+    def get_m_a(self):
+        return self.__m_a
+
+    def get_job(self):
+        return self.__job
+
+    def get_departures(self):
+        return self.__departures
+
     def str(self):
         txt = "שם: " + self.__first_name + ",שם משפחה: " + self.__last_name + ", מין: " + self.__kind
         txt += ", מ.א: " + self.__m_a + ", תואר: " + self.__job + ", יציאות: " + self.__departures
         return txt
 
 
-'''
-import datetime
-
-def diff_month(d1, d2):
-    return (d1.year - d2.year) * 12 + d1.month - d2.month
-
-
 class Duty:
 
-    __i = 13
-
-    def __init__(self, name, count, loc):
-        self.__name = name
+    def __init__(self, duty_name, count):
+        self.__duty_name = duty_name
         self.__count = count
-        self.__loc = loc
 
-    def get_loc(self):
-        return self.__loc
+    def get_duty_name(self):
+        return self.__duty_name
+
+    def get_count(self):
+        return self.__count
 
     def str(self):
-        txt = "name: " + self.__name + ", count: " + self.__count + ", loc : " + str(self.__loc)
+        txt = "name: " + self.__duty_name + ", count: " + self.__count
         return txt
 
-'''

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block active_show_duties %} class="active" {% endblock %}
+
+{% block style %}
+
+    table, th, td {
+        border: 1px solid;
+        text-align: center;
+    }
+{% endblock %}
+
+{% block body %}
+
+    <br> <br> <br>
+    <table align="center">
+        <tr>
+            <th>תורנות</th>
+            <th>כמות תורניות להקצאה</th>
+        </tr>
+
+        {% for duty in duties %}
+            <tr>
+                <td> {{ duty.get_duty_name() }} </td>
+                <td> {{ duty.get_count() }} </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
+
+{% endblock %}

@@ -3,6 +3,11 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+      if (window.history.replaceState) {
+          window.history.replaceState(null, null, window.location.href);
+      }
+    </script>
     <style>
     body {
       margin: 0;
@@ -32,6 +37,9 @@
       background-color: #04AA6D;
       color: white;
     }
+
+    {% block style %} {% endblock %}
+
     </style>
   </head>
 
@@ -41,6 +49,8 @@
       <a {% block active_home %} {% endblock %} href="/">Home</a>
       <a {% block active_add_member %} {% endblock %} href="/add_member">add member</a>
       <a {% block active_show_members %} {% endblock %} href="/show_members">show members</a>
+      <a {% block active_add_duty %} {% endblock %} href="/add_duty">add duty</a>
+      <a {% block active_show_duties %} {% endblock %} href="/show_duties">show duties</a>
     </div>
 
     {% block body %} {% endblock %}

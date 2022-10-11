@@ -2,10 +2,40 @@
 
 {% block active_show_members %} class="active" {% endblock %}
 
+{% block style %}
+
+    table, th, td {
+        border: 1px solid;
+        text-align: center;
+    }
+{% endblock %}
+
 {% block body %}
 
-    {% for member in members %}
-        <h align="center"> {{ member.str() }} </h>
-    {% endfor %}
+    <br> <br> <br>
+    <table align="center">
+        <tr>
+            <th>שם פרטי</th>
+            <th>שם משפחה</th>
+            <th>מ.א</th>
+            <th>מין</th>
+            <th>תואר</th>
+            <th>יציאות</th>
+        </tr>
+
+        {% for member in members %}
+            <tr>
+                <td> {{ member.get_first_name() }} </td>
+                <td> {{ member.get_last_name() }} </td>
+                <td> {{ member.get_m_a() }} </td>
+                <td> {{ member.get_kind() }} </td>
+                <td> {{ member.get_job() }} </td>
+                <td> {{ member.get_departures() }} </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+
 
 {% endblock %}

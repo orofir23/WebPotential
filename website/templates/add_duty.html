@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block active_add_duty %} class="active" {% endblock %}
+
+{% block body %}
+
+<form action="/show_duties_form" method="post">
+  <div>
+    <label>שם תורנות :</label>
+    <input type="text" name="duty_name" required>
+  </div>
+  <div>
+    <label>כמות תורניות להקצאה :</label>
+    <input type="number" min="1" max="7" name="count" required>
+  </div>
+  <input type="submit" value="שלח">
+</form>
+
+{% endblock %}
